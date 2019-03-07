@@ -3,5 +3,5 @@
 
 ## 使用方式
 1. `git clone https://github.com/croef/HzAutoPay.git`
-2. `d HzAutoPay`
-3 `python3 pay_model.py`
+2. `cd HzAutoPay`
+3. `python3 pay_model.py`
