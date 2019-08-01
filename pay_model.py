@@ -6,7 +6,7 @@ data = []
 result = []
 month_price = []
 
-month = 4
+month = 6
 money_unit=10000
 
 for pointer in range(len(ori)):
@@ -61,7 +61,7 @@ epochs = 200
 all_scores = []
 all_predict = []
 
-predict_data = np.array([ori[-month:]]) / 1000
+predict_data = np.array([ori[-month:]]) / money_unit
 print(predict_data)
 
 for i in range(k):
@@ -84,5 +84,7 @@ for i in range(k):
 min_index = all_scores.index(min(all_scores))
 mae = all_scores[min_index] * money_unit
 predict_mean = all_predict[min_index] * money_unit
-print('all_scores: {}\nmae={}\npredict={}'.format(allScores, mae, predict))
-print('predict price:{} in max={}, min{}, mae={}'.format(predict_mean, predict_mean + mae / 2,  predict_mean - mae / 2, mae))
+print('all_scores: {}\nmae={}\npredict={}'.format(all_scores, mae, predict))
+print('index={} predict price:{} in max={}, min{}, mae={}'.format(min_index ,predict_mean, predict_mean + mae / 2,  predict_mean - mae / 2, mae))
+
+
