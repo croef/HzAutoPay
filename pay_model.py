@@ -81,10 +81,8 @@ for i in range(k):
     print('k-fold: {} / {}, mse={}, mae={}, predict={}'.format(i + 1, k, val_mse, val_mae, predict))
 
 
-min_index = all_scores.index(min(allscores))
-mae = np.all_scores[min_index] * money_unit
+min_index = all_scores.index(min(all_scores))
+mae = all_scores[min_index] * money_unit
 predict_mean = all_predict[min_index] * money_unit
 print('all_scores: {}\nmae={}\npredict={}'.format(allScores, mae, predict))
 print('predict price:{} in max={}, min{}, mae={}'.format(predict_mean, predict_mean + mae / 2,  predict_mean - mae / 2, mae))
-
-
