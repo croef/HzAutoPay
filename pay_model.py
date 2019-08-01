@@ -6,7 +6,8 @@ data = []
 result = []
 month_price = []
 
-month = 6
+month = 4
+money_unit=10000
 
 for pointer in range(len(ori)):
     for i in range(month):
@@ -19,8 +20,8 @@ for pointer in range(len(ori)):
             data.append(np.array(month_price))
             month_price = []
     
-data = np.array(data) / 1000
-result = np.array(result) / 1000
+data = np.array(data) / money_unit
+result = np.array(result) / money_unit
 
 print(data)
 print(result)
@@ -78,10 +79,12 @@ for i in range(k):
     predict = model.predict(predict_data)
     all_predict.append(predict)
     print('k-fold: {} / {}, mse={}, mae={}, predict={}'.format(i + 1, k, val_mse, val_mae, predict))
-    
-print(all_scores)
-mae = np.mean(all_scores) * 1000
-print(mae)
-predict_mean = np.mean(all_predict) * 1000
-print(all_predict)
+
+
+min_index = all_scores.index(min(allscores))
+mae = np.all_scores[min_index] * money_unit
+predict_mean = all_predict[min_index] * money_unit
+print('all_scores: {}\nmae={}\npredict={}'.format(allScores, mae, predict))
 print('predict price:{} in max={}, min{}, mae={}'.format(predict_mean, predict_mean + mae / 2,  predict_mean - mae / 2, mae))
+
+
